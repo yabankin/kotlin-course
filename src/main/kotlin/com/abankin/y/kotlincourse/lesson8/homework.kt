@@ -129,7 +129,6 @@ fun encrypt(text: String): String {
 
     var result = ""
 
-    // Проходим по строке парами символов и меняем их местами
     for (i in 0 until text.length step 2) {
         result += text[i + 1]  // Вторая буква
         result += text[i]      // Первая буква
@@ -139,7 +138,7 @@ fun encrypt(text: String): String {
 
 fun decrypt(text: String): String{
     var result = ""
-    // Проходим по строке парами символов и меняем их обратно
+
     for (i in 0 until text.length step 2) {
         result += text[i + 1]  // Вторая буква
         result += text[i]      // Первая буква
