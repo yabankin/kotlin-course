@@ -126,7 +126,6 @@ fun abbreviation2(phrase: String): String {
 fun encrypt(text: String): String {
     // Добавляем пробел, если длина строки нечетная
     val text = if (text.length % 2 != 0) text + " " else text
-
     var result = ""
 
     for (i in 0 until text.length step 2) {
