@@ -112,5 +112,4 @@ fun main(){
     //Ключи - страны, значения - словари из городов со списком интересных мест.
     val map15: MutableMap<String, MutableMap<String, MutableList<String>>> = mutableMapOf()
 
-
 }
