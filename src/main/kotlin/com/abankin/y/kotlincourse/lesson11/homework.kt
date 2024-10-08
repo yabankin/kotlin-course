@@ -109,7 +109,7 @@ fun main(){
     //Ключи - даты, значения - список препаратов принимаемых в дату
     val map14: MutableMap<String, MutableList<String>> = mutableMapOf()
 
-    //Ключи - страны, значения - словари из городов со списком интересных мест.
+    //Ключи - страны, значения - словари из городов со списком интересных мест
     val map15: MutableMap<String, MutableMap<String, MutableList<String>>> = mutableMapOf()
 
 }
