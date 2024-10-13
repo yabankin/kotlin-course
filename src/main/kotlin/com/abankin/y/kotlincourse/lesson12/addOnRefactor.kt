@@ -41,8 +41,7 @@ fun printMap(xSize: Int, ySize: Int) {
 }
 
 fun printMapRefactor(xSize: Int, ySize: Int) {
-    if (xSize == 0) throw IllegalArgumentException("xSize не должно быть равным нулю")
-    if (ySize == 0) throw IllegalArgumentException("ySize не должно быть равным нулю")
+    if (xSize == 0 || ySize == 0) throw IllegalArgumentException("xSize и ySize не должно быть равным нулю")
 
     //максимальный размер для форматирования
     val formatterSize = maxOf(xSize, ySize).toString().length + 1
