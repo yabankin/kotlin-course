@@ -58,7 +58,6 @@ fun printMapRefactor(xSize: Int, ySize: Int) {
     //таблица
     for (i in yRange) {
         print("%${formatterSize}s".format(i))
-
         for (j in xRange) {
             val m = i * j
             val result = when {
