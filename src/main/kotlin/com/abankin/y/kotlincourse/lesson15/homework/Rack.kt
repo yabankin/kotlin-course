@@ -8,7 +8,7 @@ class Rack(
 
     fun addShelf(shelf: Shelf): Boolean {
         if (shelves.size >= maxShelves || shelves.contains(shelf)) {
-            return false // Полка уже существует или максимальное количество полок достигнуто
+            return false // Полка уже существует уже не влезут на стеллаж (макс количество)
         }
         shelves.add(shelf)
         return true
@@ -19,7 +19,7 @@ class Rack(
             shelves.removeAt(index)
             true
         } else {
-            false // Полка не существует
+            false
         }
     }
 
@@ -30,7 +30,7 @@ class Rack(
                 return true // Предмет успешно добавлен
             }
         }
-        return false // На всех полках недостаточно места
+        return false // На полках недостаточно места
     }
 
     fun removeItem(item: String): Boolean {
@@ -39,7 +39,7 @@ class Rack(
                 return true // Предмет успешно удален
             }
         }
-        return false // Предмет не найден
+        return false
     }
 
     fun isItemInRack(item: String): Boolean {
