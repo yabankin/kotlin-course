@@ -56,6 +56,4 @@ fun main() {
     println(rack.advancedRemoveShelf(0)) // Удаляем полку с распределением предметов
     rack.printContents() // Еще раз содержимое
 
-
-
 }

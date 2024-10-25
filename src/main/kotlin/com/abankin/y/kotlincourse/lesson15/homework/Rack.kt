@@ -3,7 +3,8 @@ package com.abankin.y.kotlincourse.lesson15.homework
 class Rack(
     private val shelves: MutableList<Shelf>,
     private val maxShelves: Int
-) {
+)
+{
 
     fun addShelf(shelf: Shelf): Boolean {
         if (shelves.size >= maxShelves || shelves.contains(shelf)) {

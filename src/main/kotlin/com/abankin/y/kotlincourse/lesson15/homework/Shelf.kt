@@ -3,7 +3,8 @@ package com.abankin.y.kotlincourse.lesson15.homework
 class Shelf(
     var capacity: Int,
     var items: MutableList<String>
-)  {
+)
+{
 
     private var load = 0
 
