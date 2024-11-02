@@ -9,11 +9,10 @@ class MaterialsList() : Materials() {
         val maxIndex = maxOf(materials.size, currentMaterials.size)
 
         for (i in 0 until maxIndex) {
-            if (i < materials.size) insertedMaterials.add(materials[i]) // Четные позиции
-            if (i < currentMaterials.size) insertedMaterials.add(currentMaterials[i]) // Нечетные позиции
+            if (i < materials.size) insertedMaterials.add(materials[i])
+            if (i < currentMaterials.size) insertedMaterials.add(currentMaterials[i])
         }
 
-        // Возвращаем перемешанный список обратно в контейнер
         insertedMaterials.forEach { addMaterial(it) }
     }
 }
