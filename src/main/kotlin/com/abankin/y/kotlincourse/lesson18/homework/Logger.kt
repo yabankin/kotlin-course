@@ -10,6 +10,7 @@ class Logger {
          when (type) {
              "WARNING" -> printColored("$type: $message", Color.YELLOW, Background.BLACK)
              "ERROR" -> printColored("$type: $message", Color.RED, Background.BLACK)
+             "DEBUG" -> printColored("$type: $message", Color.GREEN, Background.BLACK)
          }
 
     }

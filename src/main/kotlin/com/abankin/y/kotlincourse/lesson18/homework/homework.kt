@@ -34,6 +34,7 @@ fun main(){
     logForLogger.log("Информация")
     logForLogger.log("WARNING", "Опасность")
     logForLogger.log("ERROR", "Ошибка")
+    logForLogger.log("DEBUG", "Отладка")
     val logList = listOf("Сообщение 1","Сообщение 2", "Сообщение 3")
     logForLogger.log(logList)
     val exception = Exception("Все пропало")
