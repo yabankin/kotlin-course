@@ -14,11 +14,9 @@ class InkjetPrinter () : Printer(
 
     override fun print(text: String) {
         val words = splitText(text)
-        var colorIndex = 0
         for (word in words) {
             val (textColor, backgroundColor) = colorPairs[Random.nextInt(colorPairs.size)]
             printColored(word, textColor, backgroundColor)
-            colorIndex++
         }
     }
 }
