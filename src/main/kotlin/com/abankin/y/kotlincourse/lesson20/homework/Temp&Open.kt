@@ -13,5 +13,4 @@ abstract class `Temp&Open`: TemperatureRegulatable, Openable, ProgrammableDevice
         println("Установлена температура $temp")
     }
 
-
 }

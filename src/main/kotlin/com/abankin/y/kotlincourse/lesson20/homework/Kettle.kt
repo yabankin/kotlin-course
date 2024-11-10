@@ -1,6 +1,5 @@
 package com.abankin.y.kotlincourse.lesson20.homework
 
-
 class Kettle : `Temp&Open`(), AutomaticShutdown, Timable {
     private var isOn = false
     override val maxTemperature = 100

@@ -11,5 +11,4 @@ abstract class ProgrammableDevice : Programmable, PowerableDevice() {
     override fun execute() {
         println("Выполнено действие: $programmedAction")
     }
-
 }

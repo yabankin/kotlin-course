@@ -34,5 +34,4 @@ println("-----------Чайник---------------")
     kettle.execute()
     kettle.open()
 
-
 }
