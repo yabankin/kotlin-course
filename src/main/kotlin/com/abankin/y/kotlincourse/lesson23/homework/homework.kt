@@ -1,4 +1,4 @@
-package com.abankin.y.kotlincourse.lesson23
+package com.abankin.y.kotlincourse.lesson23.homework
 
 fun main(){
 
