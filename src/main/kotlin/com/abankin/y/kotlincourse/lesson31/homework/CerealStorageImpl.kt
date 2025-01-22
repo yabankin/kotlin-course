@@ -1,5 +1,8 @@
 package com.abankin.y.kotlincourse.lesson31.homework
 
+import kotlin.math.max
+import kotlin.math.min
+
 class CerealStorageImpl(
     override val containerCapacity: Float,
     override val storageCapacity: Float
@@ -16,20 +19,15 @@ class CerealStorageImpl(
     private val storage = mutableMapOf<Cereal, Float>()
 
     override fun addCereal(cereal: Cereal, amount: Float): Float {
-        // Проверка на отрицательное количество крупы
         require(amount >= 0) { "Количество не может быть отрицательным" }
 
-        val currentAmount = storage[cereal] ?: 0f // Текущее количество крупы в контейнере
-        val totalAmount = currentAmount + amount // Общее количество после добавления
+        val currentAmount = getAmount(cereal) // Используем метод getAmount
+        val totalAmount = currentAmount + amount
+        val newAmount = min(containerCapacity, totalAmount)
+        val remainingAmount = max(0f, totalAmount - containerCapacity)
 
-        return if (totalAmount > containerCapacity) {
-            val remainingAmount = totalAmount - containerCapacity // Количество, не помещающееся в контейнер
-            storage[cereal] = containerCapacity // Заполняем контейнер до максимума
-            remainingAmount // Возвращаем оставшееся количество
-        } else {
-            storage[cereal] = totalAmount // Обновляем количество в контейнере
-            0f // Нет оставшегося количества
-        }
+        storage[cereal] = newAmount
+        return remainingAmount
     }
 
     override fun getCereal(cereal: Cereal, amount: Float): Float {
@@ -44,7 +42,7 @@ class CerealStorageImpl(
 
     override fun removeContainer(cereal: Cereal): Boolean {
         // Проверка, пуст ли контейнер
-        if ((storage[cereal] ?: 0f) == 0f) {
+        if (getAmount(cereal) == 0f) {
             storage.remove(cereal) // Удаление контейнера
             return true // Контейнер удален
         }
@@ -61,8 +59,8 @@ class CerealStorageImpl(
     }
 
     override fun toString(): String {
-        // Возвращает строковое представление содержимого хранилища
-        return storage.map { (cereal, amount) -> "${cereal.name}: $amount" }.joinToString(", ")
+        // Возвращает строковое представление содержимого хранилища с использованием локальных названий круп
+        return storage.map { (cereal, amount) -> "${cereal.local}: $amount" }.joinToString(", ")
     }
 }
 
